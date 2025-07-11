@@ -1,0 +1,39 @@
+# 🗃 Node modules (don’t commit this massive folder)
+node_modules/
+
+# 🧪 Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ⚙️ Runtime stuff
+dist/
+build/
+.tmp/
+temp/
+
+# 🧪 Test coverage
+coverage/
+
+# ⚠️ Secrets and environment variables
+.env
+.env.*.local
+
+# 👨‍💻 Local editor settings
+.vscode/
+.idea/
+
+# 🚀 OS-specific files
+.DS_Store
+Thumbs.db
+
+# 📦 Package lock files (optional based on team)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Don't track local/editor config
+.eslintrc.js
+.prettierrc
+.vscode/
