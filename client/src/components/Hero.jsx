@@ -1,27 +1,24 @@
 const Hero = () => {
   return (
-    <section className="bg-blue-50 py-20 px-6 flex items-center justify-between flex-wrap-reverse md:flex-nowrap">
-      {/* Text Content */}
-      <div className="max-w-xl">
-        <h1 className="text-5xl font-bold text-blue-900 leading-tight">
-          Experience Exceptional Healthcare
-        </h1>
-        <p className="mt-6 text-lg text-blue-700">
-          Streamline appointments, access medical insights, and connect with
-          expert doctors—all in one platform.
-        </p>
-        <button className="mt-8 bg-blue-900 text-white px-6 py-3 rounded-full text-lg hover:bg-blue-700 transition">
-          Get Started
-        </button>
-      </div>
+    <section
+      className="relative w-full h-screen bg-center bg-cover bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url('/young-handsome-physician-medical-robe-with-stethoscope.webp')",
+      }}
+    >
+      {/* Overlay for better text contrast */}
+      <div className="absolute inset-0 bg-white bg-opacity-40"></div>
 
-      {/* Image */}
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1601982526827-6b4b2822b5d4"
-          alt="Healthcare"
-          className="w-[500px] rounded-xl shadow-lg"
-        />
+      {/* Hero Content */}
+      <div className="relative z-10 flex flex-col justify-center h-full px-6 md:px-24 max-w-screen-xl mx-auto text-blue-900">
+        <h3 className="font-bold text-blue-500 mb-4">CARING FOR LIFE</h3>
+        <h1 className="text-4xl md:text-6xl font-logo font-bold leading-tight mb-6">
+          Leading the Way <br /> in Medical Excellence
+        </h1>
+        <button className="bg-blue-200 px-6 py-2 text-blue-900 rounded-full hover:bg-blue-500 font-semibold w-fit">
+          Our Services
+        </button>
       </div>
     </section>
   );
