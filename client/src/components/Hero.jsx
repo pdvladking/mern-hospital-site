@@ -3,8 +3,7 @@ const Hero = () => {
     <section
       className="relative w-full h-screen bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage:
-          "url('/young-handsome-physician-medical-robe-with-stethoscope.webp')",
+        backgroundImage: "url('/stethoscope.webp')",
       }}
     >
       {/* Overlay for better text contrast */}

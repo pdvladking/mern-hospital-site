@@ -12,7 +12,7 @@ const DoctorSection = () => {
         {/* Doctor 1 */}
         <div className="w-full sm:w-[260px] lg:w-[300px] h-[400px] rounded-xl shadow-lg overflow-hidden bg-white dark:bg-neutral-800 text-gray-800 dark:text-white flex flex-col">
           <img
-            src="/public/young-handsome-physician-medical-robe-with-stethoscope.webp"
+            src="/stethoscope.webp"
             alt="Doctor 1"
             className="w-full h-[60%] object-cover"
           />
@@ -35,7 +35,7 @@ const DoctorSection = () => {
         {/* Doctor 2 */}
         <div className="w-full sm:w-[260px] lg:w-[300px] h-[400px] rounded-xl shadow-lg overflow-hidden bg-white dark:bg-neutral-800 text-gray-800 dark:text-white flex flex-col">
           <img
-            src="/public/young-handsome-physician-medical-robe-with-stethoscope.webp"
+            src="/stethoscope.webp"
             alt="Doctor 2"
             className="w-full h-[60%] object-cover"
           />
@@ -58,7 +58,7 @@ const DoctorSection = () => {
         {/* Doctor 3 */}
         <div className="w-full sm:w-[260px] lg:w-[300px] h-[400px] rounded-xl shadow-lg overflow-hidden bg-white dark:bg-neutral-800 text-gray-800 dark:text-white flex flex-col">
           <img
-            src="/public/young-handsome-physician-medical-robe-with-stethoscope.webp"
+            src="/stethoscope.webp"
             alt="Doctor 3"
             className="w-full h-[60%] object-cover"
           />
