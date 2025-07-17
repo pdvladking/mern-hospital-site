@@ -3,9 +3,9 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 const DoctorSection = () => {
   return (
     <section className="px-6 py-16 bg-white dark:bg-neutral-900">
-      <h4 className="text-xl font-bold mb-10 text-center text-gray-800 dark:text-white">
+      <h4 className="text-xl font-bold mb-10 text-center dark:text-white text-blue-500">
         TRUSTED CARE
-        <h2 className="text-4xl font-logo">Our Doctors</h2>
+        <h2 className="text-4xl font-logo text-blue-900">Our Doctors</h2>
       </h4>
 
       <div className="flex flex-wrap justify-center gap-8">

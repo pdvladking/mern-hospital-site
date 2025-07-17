@@ -42,11 +42,20 @@ const NewsSection = () => {
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-12">
+      {/* Section Intro */}
+      <div className="mb-6">
+        <h3 className="text-center text-xl font-semibold text-blue-600 mb-2">
+          BETTER INFORMATION,BETTER HEALTH
+        </h3>
+      </div>
+
+      {/* Heading */}
       <h2 className="text-4xl font-logo font-bold text-center text-blue-900 mb-10">
         News
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* News Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {articles.map((item) => (
           <div
             key={item.id}
@@ -83,6 +92,13 @@ const NewsSection = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Three Dots at Bottom */}
+      <div className="flex justify-center items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+        <span className="w-2 h-2 rounded-full bg-blue-900"></span>
+        <span className="w-2 h-2 rounded-full bg-blue-500"></span>
       </div>
     </section>
   );
