@@ -10,10 +10,12 @@ const FooterCard = () => {
     <section className="bg-white dark:bg-neutral-900 px-4 py-12">
       {/* Heading Block */}
       <div className="text-center mb-8">
-        <h4 className="text-xl font-bold mb-10 text-center dark:text-white text-blue-500">
+        <h4 className="text-xl font-bold mb-2 dark:text-white text-blue-500">
           GET IN TOUCH
-          <h2 className="text-4xl font-logo text-blue-900">Contact</h2>
         </h4>
+        <h2 className="text-4xl font-logo font-bold text-blue-900 dark:text-white">
+          Contact
+        </h2>
       </div>
 
       {/* Cards Container */}

@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   PhoneIcon,
   ClockIcon,
@@ -61,19 +63,55 @@ const Header = () => {
 
       {/* Navigation Bar */}
       <nav className="flex items-center justify-start gap-10 bg-blue-900 p-6 ">
-        {/* Navigation Links*/}
+        {/* Navigation Links */}
         <ul className="flex items-center space-x-6 pl-36">
-          <li className="text-white text-xl">Home</li>
-          <li className="text-white text-xl">About us</li>
-          <li className="text-white text-xl">Services</li>
-          <li className="text-white text-xl">Doctors</li>
-          <li className="text-white text-xl">News</li>
-          <li className="text-white text-xl">Contact</li>
+          <li>
+            <Link to="/" className="text-white text-xl hover:text-blue-200">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="text-white text-xl hover:text-blue-200"
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/services"
+              className="text-white text-xl hover:text-blue-200"
+            >
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/doctors"
+              className="text-white text-xl hover:text-blue-200"
+            >
+              Doctors
+            </Link>
+          </li>
+          <li>
+            <Link to="/news" className="text-white text-xl hover:text-blue-200">
+              News
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="text-white text-xl hover:text-blue-200"
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
 
-        {/*Search icon + CTA*/}
+        {/* Search icon + CTA */}
         <div className="flex items-center gap-4 ml-auto mr-24">
-          <button className="text-2xl">🔍</button>
+          <MagnifyingGlassIcon className="h-6 w-6 text-white cursor-pointer" />
           <button className="bg-blue-200 px-6 py-2 text-blue-900 rounded-full hover:bg-blue-500 font-semibold">
             Appointment
           </button>

@@ -52,15 +52,15 @@ export default function Footer() {
 
         {/* Section 4: Newsletter */}
         <div>
-          <form class="relative max-w-md mx-auto mt-10">
+          <form className="relative max-w-md mx-auto mt-10">
             <input
               type="email"
               placeholder="Enter your email address"
-              class="px-4 py-2 pr-[40px] rounded bg-blue-100 text-sm text-gray-900 placeholder-gray-600 border border-gray-400 w-full"
+              className="px-4 py-2 pr-[40px] rounded bg-blue-100 text-sm text-gray-900 placeholder-gray-600 border border-gray-400 w-full"
             />
             <button
               type="submit"
-              class="absolute top-1/2 right-3 translate-y-[-50%] text-blue-600 text-sm"
+              className="absolute top-1/2 right-3 translate-y-[-50%] text-blue-600 text-sm"
             >
               <FaTelegramPlane />
             </button>

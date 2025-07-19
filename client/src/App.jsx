@@ -1,31 +1,20 @@
-import ActionButtonRow from './components/ActionButtonRow';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import FooterCard from './components/FooterCard';
-import NewsSection from './components/NewsSection';
-import BookAppointment from './components/BookAppointment';
-import SpecialtiesSection from './components/SpecialitiesSection';
-import ServicesSection from './components/ServicesSection';
-
 import { ThemeProvider } from '@material-tailwind/react';
-import DoctorCard from './components/DoctorCard';
-import AdvancedServicesSection from './components/AdvancedServiceSection';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './Pages/Home';
+import Services from './Pages/Services';
+import Doctors from './Pages/Doctors';
 
 function App() {
   return (
     <ThemeProvider>
-      <Header />
-      <Hero />
-      <ActionButtonRow />
-      <ServicesSection />
-      <AdvancedServicesSection />
-      <SpecialtiesSection />
-      <BookAppointment />
-      <DoctorCard />
-      <NewsSection />
-      <FooterCard />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/doctors" element={<Doctors />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
