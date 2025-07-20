@@ -4,6 +4,7 @@ import PageHeader from '../components/PageHeader';
 import FooterCard from '../components/FooterCard';
 import BlogSidebar from '../components/BlogSidebar';
 import BlogCard from '../components/BlogCard';
+import Pagination from '../components/Pagination';
 
 const News = () => {
   return (
@@ -30,6 +31,7 @@ const News = () => {
             <BlogSidebar />
           </div>
         </section>
+        <Pagination />
 
         {/* 🧭 Bottom CTA or Subscription Card */}
         <FooterCard />

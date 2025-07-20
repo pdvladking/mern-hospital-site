@@ -1,10 +1,11 @@
 export { default as Header } from './Header';
 export { default as Hero } from './Hero';
+export { default as PageHeader } from './PageHeader';
 export { default as ActionButtonRow } from './ActionButtonRow';
 export { default as ServiceSection } from './ServicesSection';
 export { default as AdvanceServiceSection } from './AdvancedServiceSection';
 export { default as SpecialitiesSection } from './SpecialitiesSection';
-export { default as BookAppointment } from './BookAppointment';
+export { default as BookAppointment } from './BookanAppointment';
 export { default as DoctorCard } from './DoctorCard';
 export { default as NewsSection } from './NewsSection';
 export { default as FooterCard } from './FooterCard';

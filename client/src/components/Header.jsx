@@ -24,7 +24,6 @@ const Header = () => {
 
           {/* Contact Info */}
           <div className="flex flex-wrap gap-6 text-sm font-medium text-gray-700 dark:text-gray-200">
-            {/* EMERGENCY */}
             <div className="flex items-start gap-3 min-w-[220px] sm:flex-1">
               <PhoneIcon className="h-10 w-10 text-[#159EEC]" />
               <div className="flex flex-col">
@@ -36,8 +35,6 @@ const Header = () => {
                 </span>
               </div>
             </div>
-
-            {/* WORK HOUR */}
             <div className="flex items-start gap-3 min-w-[220px] sm:flex-1">
               <ClockIcon className="h-10 w-10 text-[#159EEC]" />
               <div className="flex flex-col">
@@ -49,8 +46,6 @@ const Header = () => {
                 </span>
               </div>
             </div>
-
-            {/* LOCATION */}
             <div className="flex items-start gap-3 min-w-[220px] sm:flex-1">
               <MapPinIcon className="h-10 w-10 text-[#159EEC]" />
               <div className="flex flex-col">
@@ -118,12 +113,17 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* Right Side: Search + CTA + Burger (Mobile only) */}
+          {/* Right Side: Search + CTA + Burger */}
           <div className="flex items-center gap-4">
             <MagnifyingGlassIcon className="h-6 w-6 text-white cursor-pointer hidden md:block" />
-            <button className="hidden md:block bg-blue-200 px-6 py-2 text-blue-900 rounded-full hover:bg-blue-500 font-semibold">
+
+            {/* 👉 Updated CTA */}
+            <Link
+              to="/book-appointment"
+              className="hidden md:block bg-blue-200 px-6 py-2 text-blue-900 rounded-full hover:bg-blue-500 font-semibold"
+            >
               Appointment
-            </button>
+            </Link>
 
             {/* Burger Button */}
             <button
@@ -188,9 +188,13 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <button className="bg-blue-200 px-4 py-2 text-blue-900 rounded-full hover:bg-blue-500 font-semibold w-full">
+                {/* 👉 Updated Mobile CTA */}
+                <Link
+                  to="/book-appointment"
+                  className="bg-blue-200 px-4 py-2 text-blue-900 rounded-full hover:bg-blue-500 font-semibold w-full text-center block"
+                >
                   Appointment
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

@@ -6,11 +6,11 @@ import {
   ServiceSection,
   AdvanceServiceSection,
   SpecialitiesSection,
-  BookAppointment,
   DoctorCard,
   NewsSection,
   FooterCard,
 } from '../components';
+import AppointmentSection from '../components/AppointmentSection';
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
       <SpecialitiesSection />
 
       {/* Appointments & Team */}
-      <BookAppointment />
+      <AppointmentSection />
       <DoctorCard />
 
       {/* News & Info */}

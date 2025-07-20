@@ -7,6 +7,7 @@ import Doctors from './Pages/Doctors';
 import AboutUs from './Pages/AboutUs';
 import Contact from './Pages/Contact';
 import News from './Pages/News';
+import BookanAppointment from './components/BookanAppointment';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
+          <Route path="/book-appointment" element={<BookanAppointment />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
