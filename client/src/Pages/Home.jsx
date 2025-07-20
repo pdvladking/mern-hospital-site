@@ -1,6 +1,6 @@
 import React from 'react';
+import Layout from '../components/Layout';
 import {
-  Header,
   Hero,
   ActionButtonRow,
   ServiceSection,
@@ -10,14 +10,12 @@ import {
   DoctorCard,
   NewsSection,
   FooterCard,
-  Footer,
 } from '../components';
 
 export default function Home() {
   return (
-    <>
-      {/* Top Nav & Hero */}
-      <Header />
+    <Layout>
+      {/* Top Hero Section */}
       <Hero />
 
       {/* Call-to-Actions */}
@@ -34,10 +32,7 @@ export default function Home() {
 
       {/* News & Info */}
       <NewsSection />
-
-      {/* Footer Elements */}
       <FooterCard />
-      <Footer />
-    </>
+    </Layout>
   );
 }

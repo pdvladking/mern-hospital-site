@@ -1,27 +1,22 @@
 import React from 'react';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 import PageHeader from '../components/PageHeader';
-import FooterCard from '../components/FooterCard';
-import Footer from '../components/Footer';
 import FreeCheckupCard from '../components/FreeCheckupCard';
+import FooterCard from '../components/FooterCard';
 
 export default function Services() {
   return (
-    <>
-      {/* Global Header */}
-      <Header />
-
-      {/* Services Banner */}
+    <Layout>
       <PageHeader
         title="Our Services"
         breadcrumb="Home / Services"
         bgImage="/images/services-hero.jpg"
       />
-      <FreeCheckupCard />
 
-      {/* Footer Elements */}
-      <FooterCard />
-      <Footer />
-    </>
+      <section className="py-16 space-y-16">
+        <FreeCheckupCard />
+        <FooterCard />
+      </section>
+    </Layout>
   );
 }

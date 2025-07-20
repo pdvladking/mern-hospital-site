@@ -1,15 +1,13 @@
-import Header from '../components/Header';
-import FooterCard from '../components/FooterCard';
-import Footer from '../components/Footer';
-import NewsSection from '../components/NewsSection';
+import Layout from '../components/Layout';
 import PageHeader from '../components/PageHeader';
 import DoctorCard from '../components/DoctorCard';
+import TestimonialSection from '../components/TestimonialSection';
+import NewsSection from '../components/NewsSection';
+import FooterCard from '../components/FooterCard';
 
 export default function Doctors() {
   return (
-    <>
-      <Header />
-
+    <Layout>
       {/* Page Banner */}
       <PageHeader
         breadcrumb="Home / Doctors"
@@ -17,16 +15,22 @@ export default function Doctors() {
         bgImage="/banner-doctors.webp"
       />
 
-      {/* Doctor Cards Section - First Grid */}
-      <DoctorCard />
+      <section className="space-y-16 py-16">
+        {/* Doctor Cards Section - First Grid */}
+        <DoctorCard showHeading={false} />
 
-      {/* Doctor Cards Section - Second Grid */}
-      <DoctorCard />
+        {/* Doctor Cards Section - Second Grid */}
+        <DoctorCard showHeading={false} />
 
-      {/* News and Footer */}
-      <NewsSection />
-      <FooterCard />
-      <Footer />
-    </>
+        {/* Optional Testimonial Section */}
+        <TestimonialSection />
+
+        {/* News Section */}
+        <NewsSection />
+
+        {/* Footer Promo */}
+        <FooterCard />
+      </section>
+    </Layout>
   );
 }

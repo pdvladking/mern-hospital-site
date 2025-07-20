@@ -1,17 +1,19 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
-const DoctorSection = () => {
+const DoctorSection = ({ showHeading = true }) => {
   return (
     <section className="px-6 py-16 bg-white dark:bg-neutral-900">
-      {/* Headings */}
-      <div className="text-center mb-10">
-        <h4 className="text-xl font-bold text-blue-500 dark:text-white">
-          TRUSTED CARE
-        </h4>
-        <h2 className="text-4xl font-logo font-bold text-blue-900 dark:text-white">
-          Our Doctors
-        </h2>
-      </div>
+      {/* Headings - only show if prop is true */}
+      {showHeading && (
+        <div className="text-center mb-10">
+          <h4 className="text-xl font-bold text-blue-500 dark:text-white">
+            TRUSTED CARE
+          </h4>
+          <h2 className="text-4xl font-logo font-bold text-blue-900 dark:text-white">
+            Our Doctors
+          </h2>
+        </div>
+      )}
 
       {/* Doctor Cards Container */}
       <div className="flex flex-wrap justify-center gap-8">
