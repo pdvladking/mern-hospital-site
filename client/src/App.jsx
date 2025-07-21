@@ -7,6 +7,7 @@ import Doctors from './Pages/Doctors';
 import AboutUs from './Pages/AboutUs';
 import Contact from './Pages/Contact';
 import News from './Pages/News';
+import FAQ from './Pages/FAQ';
 import BookanAppointment from './components/BookanAppointment';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/book-appointment" element={<BookanAppointment />} />
         </Routes>
       </BrowserRouter>
