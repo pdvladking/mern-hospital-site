@@ -2,42 +2,25 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import Patient from './models/Patient.js';
+
 import PatientRoutes from './routes/patientRoutes.js';
+import DoctorRoutes from './routes/doctorRoutes.js';
+import ContactRoutes from './routes/contactRoutes.js';
+import AppointmentRoutes from './routes/appointmentRoutes.js';
+import AuthRoutes from './routes/authRoutes.js';
+import FAQRoutes from './routes/faqRoutes.js';
 
 dotenv.config();
 const app = express();
 
+// Middlewares
 app.use(cors());
 app.use(express.json());
+
+// Routes
 app.use('/api/patients', PatientRoutes);
-
-const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGODB_URI;
-
-app.get('/', (req, res) => {
-  res.send('API is running');
-});
-
-mongoose
-  .connect(MONGO_URI)
-  .then(() => {
-    console.log('MongoDB connected');
-
-    const testPatient = new Patient({
-      name: 'Raj Test',
-      age: 24,
-      gender: 'Male',
-      diagnosis: 'Full-stack curiosity syndrome',
-    });
-
-    testPatient
-      .save()
-      .then(() => console.log('Test patient saved'))
-      .catch((err) => console.error('Error saving patient:', err.message));
-
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-    });
-  })
-  .catch((err) => console.error('MongoDB error:', err.message));
+app.use('/api/doctors', DoctorRoutes);
+app.use('/api/contact', ContactRoutes);
+app.use('/api/appointments', AppointmentRoutes);
+app.use('/api/auth', AuthRoutes);
+app.use('/api/faqs', FAQRoutes);

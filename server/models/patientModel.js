@@ -16,7 +16,7 @@ const patientSchema = new mongoose.Schema({
   },
   diagnosis: {
     type: String,
-    default: 'Not yet diagosed',
+    default: 'Not yet diagnosed',
   },
   createdAt: {
     type: Date,
