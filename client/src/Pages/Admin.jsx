@@ -1,5 +1,5 @@
 import React from 'react';
-import AddDoctorForm from '../Components/AddDoctorForm';
+import AddDoctorForm from '../components/AddDoctorForm';
 import AppointmentsTable from '../components/AppointmentsTable';
 
 const Admin = () => {
