@@ -9,6 +9,7 @@ import Contact from './Pages/Contact';
 import News from './Pages/News';
 import FAQ from './Pages/FAQ';
 import BookanAppointment from './components/BookanAppointment';
+import Admin from './Pages/Admin';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/book-appointment" element={<BookanAppointment />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
