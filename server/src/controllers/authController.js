@@ -1,36 +1,48 @@
-import User from '../models/userModel.js';
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import Doctor from '../models/Doctor.js';
 
-export const registerUser = async (req, res) => {
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+};
+
+// Register new doc
+export const registerDoctor = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
-    const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ error: 'Email already registered' });
+    const { name, email, password, specialization } = req.body;
+    const doctorExists = await Doctor.findOne({ email });
+    if (doctorExists) return res.status(400).json({ error: 'Doctor already exits' });
 
-    const newUser = new User({ name, email, password, role });
-    await newUser.save();
-    res.status(201).json({ message: 'User registered successfully' });
+    const doctor = await Doctor.create({ name, email, password, specialization });
+    res.status(201).json({
+      _id: doctor._id,
+      name: doctor.name,
+      email: doctor.email,
+      specialization: doctor.specialization,
+      token: generateToken(doctor._id)
+    });
   } catch (err) {
-    res.status(500).json({ error: 'Registration failed' });
+    res.status(500).json({ error: err.message });
   }
 };
 
-export const loginUser = async (req, res) => {
+// Login doctor
+export const loginDoctor = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await User.findOne({ email });
-    if (!user) return res.status(401).json({ error: 'Invalid credentials' });
+    const doctor = await Doctor.findOne({ email });
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(401).json({ error: 'Incorrect password' });
-
-    const token = jwt.sign({ userId: user._id, role: user.role }, process.env.JWT_SECRET, {
-      expiresIn: '7d',
-    });
-
-    res.status(200).json({ token, role: user.role, name: user.name });
+    if (doctor && (await doctor.matchPassword(password))) {
+      res.json({
+        _id: doctor._id,
+        name: doctor.name,
+        email: doctor.email,
+        specialization: doctor.specialization,
+        token: generateToken(doctor._id)
+      });
+    } else {
+      res.status(401).json({ error: 'Invalid email or password' });
+    }
   } catch (err) {
-    res.status(500).json({ error: 'Login failed' });
+    res.status(500).json({ error: err.message });
   }
 };

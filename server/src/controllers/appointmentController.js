@@ -1,20 +1,40 @@
-import Appointment from '../models/appointmentModel.js';
+import Appointment from "../models/Appointment";
 
-export const bookAppointment = async (req, res) => {
+// Create appointment
+export const createAppointment = async (req, res) => {
   try {
-    const newAppt = new Appointment(req.body);
-    await newAppt.save();
-    res.status(201).json({ message: 'Appointment booked successfully' });
+    const { patient, doctor, date } = req.body;
+    const appointment = await Appointment.create({ patient, doctor, date });
+    res.status(201).json(appointment);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to book appointment' });
+    res.status(400).json({ error: err.message });
   }
 };
 
+// Get all appointments
 export const getAppointments = async (req, res) => {
   try {
-    const appts = await Appointment.find().populate('doctorId');
-    res.status(200).json(appts);
+    const appointments = await Appointment.find()
+    .populate('patient', 'name age diagnosis')
+    .populate('doctor', 'name email specialization');
+    res.json(appointments);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch appointments' });
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// Update appointment status
+export const updateAppointmentStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+    const appointment = await Appointment.findByIdAndUpdate(
+      id,
+      { status },
+      { new: true }
+    );
+    res.json(appointment);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
 };

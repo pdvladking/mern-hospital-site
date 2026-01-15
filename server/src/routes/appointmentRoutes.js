@@ -1,24 +1,12 @@
 import express from 'express';
-import { bookAppointment, getAppointments } from '../controllers/appointmentController.js';
-import { verifyToken } from '../middleware/verifyToken.js';
+import { createAppointment, getAppointments, updateAppointmentStatus } from '../controllers/appointmentController';
+import protect from '../middleware/authMiddleware';
 
 const router = express.Router();
 
-// 🗓️ Public route for booking an appointment
-router.post('/', bookAppointment);
-
-// 📊 Protected route to get all appointments (admin only)
-router.get('/', verifyToken, async (req, res, next) => {
-  try {
-    // Optional: restrict access to admins only
-    if (req.user.role !== 'admin') {
-      return res.status(403).json({ error: 'Access denied. Admins only.' });
-    }
-    // Call controller logic
-    await getAppointments(req, res);
-  } catch (err) {
-    next(err);
-  }
-});
+//Protected routes
+router.post('/', protect, createAppointment);
+router.get('/', protect, getAppointments);
+router.put('/:id/status', protect, updateAppointmentStatus);
 
 export default router;
