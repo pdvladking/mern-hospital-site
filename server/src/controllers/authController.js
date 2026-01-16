@@ -18,6 +18,7 @@ export const registerDoctor = async (req, res) => {
       name: doctor.name,
       email: doctor.email,
       specialization: doctor.specialization,
+      role: doctor.role,
       token: generateToken(doctor._id)
     });
   } catch (err) {
@@ -37,6 +38,7 @@ export const loginDoctor = async (req, res) => {
         name: doctor.name,
         email: doctor.email,
         specialization: doctor.specialization,
+        role: doctor.role,
         token: generateToken(doctor._id)
       });
     } else {
